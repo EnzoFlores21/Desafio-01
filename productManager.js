@@ -6,7 +6,7 @@ class ProductManager {
         this.contador = 1;
     }
     getProducts() {
-        return this.product
+        console.log(this.product);
     }
 
     addProduct(product) {
