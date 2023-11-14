@@ -16,6 +16,13 @@ class ProductManager {
     }
 
     addProduct(product) {
+        for (const key in product) {
+            if (product[key] == undefined) {
+                console.log("Falta valores requeridos");
+                return
+            }
+            
+        }
 
         let productoCode = this.product.find((producto) => producto.code == product.code)
 
@@ -33,16 +40,17 @@ class ProductManager {
 
 class Product {
     constructor(title, description, price, thumbnail, code, stock) {
-        this.title = title || " ";
-        this.description = description || " ";
-        this.price = price || 0;
-        this.thumbnail = thumbnail || " ";
-        this.code = code || 0;
-        this.stock = stock || 0;
+        this.title = title;
+        this.description = description;
+        this.price = price;
+        this.thumbnail = thumbnail;
+        this.code = code;
+        this.stock = stock;
     }
 }
 
-let producto1 = new Product("producto1", "Silla", 400);
+let producto1 = new Product("producto1", 400, "ala", 1, 20);
+
 
 // Pruebas
 
